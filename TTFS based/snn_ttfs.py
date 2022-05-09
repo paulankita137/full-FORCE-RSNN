@@ -106,13 +106,7 @@ class Subnetwork(object):
         return np.dot(self.J, self.r*self.dt) + (sum_out + sum_h)*self.Q
 
 
-       # def ttfs(self, t,alpha, f_out=None, h=None):
-                #calculate threshold voltage
-
-        #        v_th = (-t/time_constant)
-         #       ws = math.exp(v_th)  #exponential decay function
-          #      wij = u_in*alpha
-           #     s = ws*(s)
+     
 
 
     def step(self, f, t, f_out=None, h=None):
@@ -139,28 +133,28 @@ class Subnetwork(object):
         x = self.v_mem + self.dt*dv
 
         self.spikes = (x >= self.v_act).astype(int)
-       # print('spikes',self.spikes)
+        print('spikes',self.spikes)
 
 
         spike_loc = np.where(self.spikes==1)
-        #print('spike locations',spike_loc)
+        print('spike locations',spike_loc)
 
         if spike_loc[0].any() !=0:
 
          if spike_loc[0][0]!=0:  
              
            index = spike_loc[0][0]
-          # print('spike index',index) 
+           print('spike index',index) 
 
            #length of spike locations array
            c=len(spike_loc[0])
-           #print(c)
+           print(c)
 
            if c>1:
               for i in range(1,c):
                   ind=spike_loc[0][i]
                   self.spikes[ind]=0
-                 # print('final a',self.spikes)
+                 
                   i+=1
 
 
