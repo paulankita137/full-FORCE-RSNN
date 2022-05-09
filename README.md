@@ -5,4 +5,7 @@ The learning described in the paper is applied to Accordian function. The func.p
 The rate based and time-to-first-spike based implementations are available in separate folders. For any questions send an email to - ankita.paul@drexel.edu
 
 
+The proposed training procedure consists of generating targets for both the recurrently-connected hidden layer and the output layer (i.e., for a full RSNN system), and using the recursive least square-based First-Order and Reduced Control Error (FORCE) algorithm to fit the activity of each layer to its target. We demonstrate the improved performance and noise robustness of the proposed full-FORCE training procedure to model 10 dynamic systems using RSNNs with leaky integrate and
+fire (LIF) neurons and spike rate-based encoding. For energy- efficient hardware implementation, an alternative time-to-first-spike (TTFS) encoding is implemented for the full-FORCE train-ing procedure. Compared to rate-based encoding, full-FORCE with TTFS encoding requires lower spike count and facilitate faster convergence to the target response
+
 ![accordian snn ttfs](https://user-images.githubusercontent.com/53861279/167361343-f4a7f7a0-f9fb-44ce-aec2-f999b2321501.png)
