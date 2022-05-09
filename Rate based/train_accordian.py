@@ -2,7 +2,7 @@ import sys
 import os
 
 sys.path.insert(1, "..")
-from snn import *
+from snn_rate import *
 
 from func import *
 
